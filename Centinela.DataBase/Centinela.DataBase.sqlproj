@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Centinela.DataBase</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{42f1fa0d-e4cf-4d42-9b2d-928063b3ac1e}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Centinela.DataBase</RootNamespace>
+    <AssemblyName>Centinela.DataBase</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Apom" />
+    <Folder Include="Centinela" />
+    <Folder Include="Nazir" />
+    <Folder Include="RepExt" />
+    <Folder Include="Tmnet" />
+    <Folder Include="Txnlog_Bcbeft" />
+    <Folder Include="Centinela\Paquete" />
+    <Folder Include="Txnlog_Bcbeft\View" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Apom\APOM_GET_TRANSACCIONES_COMPLETADAS.sql" />
+    <None Include="Centinela\EXT_USO_CARGA_QUINCENA_INSERT.sql" />
+    <None Include="Centinela\EXT_USO_CLIENTE_GENERAR_ARCHIVO_ATC_GET.sql" />
+    <None Include="Centinela\EXT_USO_CLIENTE_LECTURA_ARCHIVO_ATC_GET.sql" />
+    <None Include="Centinela\EXT_USO_CLIENTE_TC_ATC_ESTADO_UPDATE.sql" />
+    <None Include="Centinela\EXT_USO_CLIENTE_TRANS_TD_ESTADO_UPDATE.sql" />
+    <None Include="Centinela\EXT_USO_CLIENTE_TRANS_TD_PENDIENTES_GET.sql" />
+    <None Include="Centinela\EXT_USO_CUENTAS_TC_INSERT.sql" />
+    <None Include="Centinela\EXT_USO_CUENTAS_TRANSF_TD_INSERT.sql" />
+    <None Include="Centinela\EXT_USO_EXTERIOR_CIC_PENDIENTES_GET.sql" />
+    <None Include="Centinela\EXT_USO_EXTERIOR_CIC_UPDATE.sql" />
+    <None Include="Centinela\EXT_USO_EXTERIOR_IMPORTES_USD_UPDATE.sql" />
+    <None Include="Centinela\EXT_USO_EXTERIOR_TRANSF_EFE_PENDIENTE_GET.sql" />
+    <None Include="Centinela\EXT_USO_EXTERIOR_TRANSF_EFE_UPDATE.sql" />
+    <None Include="Centinela\Paquete\EXT_USO_EXTERIOR_TARJETAS_ENCRYPT_UPDATE.sql" />
+    <None Include="Centinela\Paquete\EXT_USO_EXTERIOR_TC_EXTORNO_DELETE_UPDATE.sql" />
+    <None Include="Centinela\Paquete\EXT_USO_EXTERIOR_TRANSF_ENCRYPT_UPDATE.sql" />
+    <None Include="Nazir\EXT_USO_COMISION_CIC_X_CUENTA.sql" />
+    <None Include="Nazir\EXT_USO_COMISION_MOVIM.sql" />
+    <None Include="Txnlog_Bcbeft\SP_TXNLOG_USO_EXTERIOR.sql" />
+    <None Include="Txnlog_Bcbeft\SP_TXNLOG_USO_EXTERIOR_REVERSA.sql" />
+    <None Include="Txnlog_Bcbeft\View\VIEW_TXNLOG_COMISIONES_EXTERIOR.sql" />
+    <None Include="Txnlog_Bcbeft\View\VIEW_TXNLOG_COMISIONES_EXTERIOR_REVERSION.sql" />
+    <None Include="Tmnet\CENTINELA_GET_TRANSFERENCIA_X_OPERACION.sql" />
+    <None Include="RepExt\TBLCTAPAS_RCO_GetByCic.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="00.-[create].[schema].sql" />
+    <None Include="01.-[create].[user].sql" />
+  </ItemGroup>
+</Project>
